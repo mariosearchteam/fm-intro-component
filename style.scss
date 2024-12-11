@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* color */
+
+$clr-red: hsl(0, 100%, 74%);
+$clr-green: hsl(154, 59%, 51%);
+$clr-blue: hsl(248, 32%, 49%);
+$clr-dark-blue: hsl(249, 10%, 26%);
+$clr-grayish-blue: hsl(246, 25%, 77%);
+$clr-neutral-100: hsl(0, 0%, 100%);
+$clr-neutral-300: hsl(0, 0%, 87%);
+
+/* typography */
+
+$ff: "Poppins", sans-serif;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+$fs-100: 0.6875rem;
+$fs-200: 0.875rem;
+$fs-300: 0.9375rem;
+$fs-400: 1rem;
+$fs-500: 1.75rem;
+$fs-900: 3.125rem;
+
+$box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.15);
+$inner-shadow: inset 0 -0.25rem 0 rgba(0, 0, 0, 0.1);
+
+/* spacer */
+
+$spacer-50: 0.25rem;
+$spacer-100: 0.5rem;
+$spacer-200: 1rem;
+$spacer-300: 1.5rem;
+$spacer-400: 2rem;
+$spacer-500: 2.5rem;
+$spacer-600: 3rem;
+$spacer-700: 3.5rem;
+$spacer-800: 4rem;
+$spacer-900: 4.5rem;
+$spacer-1000: 5rem;
+$spacer-1100: 5.5rem;
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1.2;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  line-height: 1.6;
+  font-family: $ff;
+  font-size: $fs-300;
+  color: $clr-neutral-100;
+}
+
+main {
+  background-color: $clr-red;
+  background-image: url("./images/bg-intro-mobile.png");
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+/* Utility classes */
+.flow-content > * + * {
+  margin-top: $fs-400;
+}
+
+.flow-content--large {
+  margin-top: 3rem;
+}
+
+.shadow {
+  -webkit-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+.bg-dark {
+  background: $clr-dark-blue;
+  color: $clr-neutral-100;
+}
+
+.text-accent {
+  color: $clr-red;
+}
+
+.container {
+  padding: 0 $fs-400;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+}
+
+/* general */
+
+.intro {
+  padding: $spacer-1100 0;
+  text-align: center;
+  max-width: 70rem;
+  &__title {
+    font-size: $fs-500;
+    font-weight: $fw-bold;
+  }
+  &__content {
+    font-size: $fs-400;
+  }
+  &__signup {
+    margin-top: $spacer-600;
+    width: 100%;
+  }
+  &__banner {
+    width: 100%;
+    background: $clr-blue;
+    padding: $spacer-200;
+    border-radius: $spacer-100;
+  }
+  &__subtitle {
+    margin: 0 auto;
+    font-size: $fs-300;
+    font-weight: $fw-regular;
+    max-width: 20ch;
+    line-height: $spacer-300;
+  }
+  &__form {
+    background: $clr-neutral-100;
+    border-radius: $spacer-100;
+    padding: $spacer-200;
+    & input {
+      width: 100%;
+      padding: $spacer-200;
+      border-radius: $spacer-50;
+      border: 1px solid $clr-neutral-300;
+      color: $clr-dark-blue;
+      font-weight: $fw-semibold;
+
+      &::placeholder {
+        color: $clr-dark-blue;
+        opacity: 0.75;
+      }
+      &:focus {
+        outline: none;
+        border-color: $clr-blue;
+      }
+    }
+  }
+  &__form-group {
+    position: relative;
+
+    margin-top: $spacer-300;
+  }
+  .terms {
+    margin-top: $spacer-100;
+    margin-inline: auto;
+    max-width: 35ch;
+    font-size: $fs-100;
+    color: $clr-grayish-blue;
+    & a {
+      font-weight: $fw-bold;
+      text-decoration: none;
+    }
+  }
+  & .button {
+    display: block;
+    width: 100%;
+    margin-top: $spacer-300;
+    padding: $spacer-200;
+    border: none;
+    border-radius: $spacer-50;
+    background: $clr-green;
+    color: $clr-neutral-100;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: $fw-semibold;
+    box-shadow: $inner-shadow;
+    cursor: pointer;
+  }
+}
+
+.just-validate-error-label {
+  text-align: right;
+  font-size: $fs-100;
+  color: $clr-red !important;
+  font-style: italic;
+}
+.just-validate-error-field {
+  border: 2px solid $clr-red !important;
+  color: $clr-red !important;
+  &::placeholder {
+    opacity: 0 !important;
+  }
+}
+.just-validate-error-label::after {
+  content: url("./images/icon-error.svg");
+  position: absolute;
+  top: $spacer-200;
+  right: $spacer-200;
+}
+
+@media (min-width: 40rem) {
+  .split {
+    flex-direction: row;
+  }
+  .intro {
+    align-items: center;
+    text-align: left;
+    &__title {
+      font-size: $fs-900;
+    }
+    &__signup {
+      min-width: 50%;
+    }
+    &__form {
+      padding: $spacer-200 $spacer-500;
+    }
+    &__subtitle {
+      max-width: unset;
+      text-align: center;
+    }
+
+    & .terms {
+      text-align: center;
+      max-width: unset;
+      padding-bottom: $spacer-400;
+    }
+  }
+}
